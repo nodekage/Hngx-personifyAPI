@@ -3,6 +3,7 @@ const CONFIG = require ('./config/config')
 
 const app = express()
 
+require('./db/mongoDb').connectToMongoDB()
 
 
 app.get('/', (req,res) => {
