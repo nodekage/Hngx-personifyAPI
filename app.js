@@ -5,6 +5,14 @@ const app = express()
 
 require('./db/mongoDb').connectToMongoDB()
 
+const personRoute = require('./routes/person')
+
+
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json())
+
+
+app.use('/api', personRoute)
 
 app.get('/', (req,res) => {
     res.send({
@@ -13,5 +21,5 @@ app.get('/', (req,res) => {
 })
 
 app.listen (CONFIG.PORT, () => {
-    console.log(`Server succesfully started on port : ${CONFIG.PORT}`)
+    console.log(`Server 1 succesfully started on port : ${CONFIG.PORT}`)
 })
