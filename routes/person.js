@@ -3,7 +3,7 @@ const personController = require('../controllers/person.controller')
 
 
 // CREATE PERSON
-router.post('/create', personController.createPerson)
+router.post('/', personController.createPerson)
 
 
 // GET PERSON BY ID
