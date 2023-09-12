@@ -20,6 +20,6 @@ app.get('/', (req,res) => {
     })
 })
 
-app.listen (CONFIG.PORT, () => {
+app.listen (CONFIG.PORT || 8300, () => {
     console.log(`Server 1 succesfully started on port : ${CONFIG.PORT}`)
 })
