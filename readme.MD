@@ -13,6 +13,7 @@ The base URL for all API endpoints is: `http://localhost:8300/api`
 
 ### UML DIAGRAM
 
+![UML DIAGRAM](https://github.com/nodekage/Hngx-personifyAPI/blob/main/Screenshot%20(665).png?raw=true)
 
 
 
@@ -42,7 +43,7 @@ The API will be accessible at `http://localhost:8300/api`.
 
 #### Create a New Person
 
--   **Endpoint**: `POST /api/create`
+-   **Endpoint**: `POST /api/`
 -   **Description**: Adds a new person to the database.
 -   **Request Body**:
     -   Example:
