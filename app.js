@@ -15,6 +15,7 @@ app.use(express.json())
 app.use('/api', personRoute)
 
 app.get('/', (req,res) => {
+    
     res.send({
         message : "Personify API!"
     })

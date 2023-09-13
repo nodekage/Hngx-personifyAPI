@@ -7,7 +7,7 @@ router.post('/', personController.createPerson)
 
 
 // GET PERSON BY ID
-router.get('/:id', personController.GetPersonByID)
+router.get('/:id', personController.getPersonByID)
 
 
 // UPDATE PEROSN BY ID

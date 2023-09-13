@@ -1,19 +1,18 @@
-const mongoose = require('mongoose')
-const CONFIG = require('../config/config')
+const mongoose = require('mongoose');
+const CONFIG = require('../config/config');
 
-// connect to mongodb
-function connectToMongoDB() {
+async function connectToMongoDB() {
+  try {
+    await mongoose.connect(CONFIG.MONGODB_URL, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
 
-    mongoose.set("strictQuery", false);
-    mongoose.connect(CONFIG.MONGODB_URL)
-
-    mongoose.connection.on('connected', () => {
-        console.log('MongoDb Connection Successful! ')
-    })
-
-    mongoose.connection.on('error', (err) => {
-        console.log('An error occured', err)
-    })
+    console.log('MongoDb Connection Successful!');
+  } catch (err) {
+    console.error('MongoDb Connection Error:', err.message || err);
+    throw err;
+  }
 }
 
-module.exports =  { connectToMongoDB }
+module.exports = { connectToMongoDB };
